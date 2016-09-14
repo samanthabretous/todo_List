@@ -16,7 +16,7 @@ var server = http.createServer(function (req, res){
   if(url === "/") readFile('index.html', "html");
   else if (url === "/assets/css/todo.css") readFile("assets/css/todo.css", "css");
   else if (url === "/assets/js/lib/jquery-3.0.0.min.js") readFile("assets/js/lib/jquery-3.0.0.min.js", "javascript");
-  else if (url === "/assets/js/todo.js") readFile("assets/js/todo.js")
+  else if (url === "/assets/js/app.js") readFile("assets/js/app.js", "babel")
 
 })
 
