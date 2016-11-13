@@ -10,13 +10,13 @@ const getTodo = (req, res, next) => {
 
 const createTodo = (req, res) =>{
   console.log(req.body)
-  Todo.create(req.body, (err) => {
+  Todo.create(req.body, (err, data) => {
     if(err) console.log("Error creating ToDo Action")
-    else console.log('post successfully created');
+    else res.send(data);;
   })
 }
 
-const deleteTodo =(req, res) =>{
+const deleteTodo = (req, res) =>{
   Todo.remove(req.body, (err) =>{
     if(err)console.log("Error removing todo")
     else console.log('Delete successful')

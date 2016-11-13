@@ -9,6 +9,7 @@ const TodosContainer = (props) => (
 )
 
 const mapStateToProps = (state) =>  {
+  console.log(state.todos)
   return {todos: state.todos};
 }
 

@@ -10,7 +10,7 @@ body{
 	background: linear-gradient(to right, #70e1f5 , #ffd194); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */      
 }
 
-#container{
+#root{
 	width: 400px;
 	margin: 100px auto;
 	background: #f7f7f7;
@@ -27,8 +27,13 @@ h1{
 	font-weight: normal;
 }
 
-.fa-plus{
-	float: right;
+button {
+	border: none;
+	background: transparent;
+}
+
+.createTodo{
+display: flex;
 }
 
 input{
@@ -38,6 +43,9 @@ input{
 	padding: 13px 13px 13px 20px;
 	color: #2980b9;
 	border: 3px solid rgba(0,0,0,0);
+}
+
+.fa-plus{
 }
 
 input:focus{
