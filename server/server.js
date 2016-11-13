@@ -17,7 +17,7 @@ db.on('open', function() {
   app.use(express.static('client/js/bundle'))
   
   // Handles API/server side routing
-  app.use('/api/todo', routes.todo);
+  app.use('/api/todos', routes.todo);
   
   // Handles client side routing
   app.use('*', routes.home)

@@ -19,6 +19,7 @@ const createTodo = (req, res) =>{
 const deleteTodo =(req, res) =>{
   Todo.remove(req.body, (err) =>{
     if(err)console.log("Error removing todo")
+    else console.log('Delete successful')
   })
 }
 

@@ -1,24 +1,23 @@
 import React from 'react'
 import {render} from 'react-dom'
+import {Provider} from 'react-redux'
+import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 
+//Component
+import TodosContainer from './todos/TodosContainer'
 
-const MainDisplay = () => {
-	return (
-		<section>
-			<h1 id="greet">To Do List<i className="fa fa-plus"></i></h1>
-			<input type="text" placeholder="Add New TO-DO"></input>
-			<ul>
-				<li>
-					<span>
-						<i className="fa fa-trash">Musty</i>							
-					</span></li>
-			</ul>
-		</section>				
-	)
-}
+//Redux
+import store from './store'
+import {getTodosAsync} from './todos/todos-actions'
+
+const getAllTodos = () => {store.dispatch(getTodosAsync())}
 
 render(
-	<MainDisplay/>, 
+	<Provider store={store} >
+		<Router history={browserHistory}>
+			<Route path="/" component={TodosContainer} onEnter={getAllTodos}/>
+		</Router>
+	</Provider>, 
 	document.getElementById('root')
 )
 
